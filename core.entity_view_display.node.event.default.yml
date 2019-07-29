@@ -1,0 +1,44 @@
+uuid: 3abaaa07-4bca-4ef6-99c1-bb5a49c94e24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_event_time
+    - field.field.node.event.field_event_venue
+    - node.type.event
+  module:
+    - address
+    - text
+    - user
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    label: inline
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_time:
+    weight: 0
+    label: inline
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: America/Sao_Paulo
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_event_venue:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+hidden:
+  links: true
