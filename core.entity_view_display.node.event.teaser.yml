@@ -1,0 +1,37 @@
+uuid: 23a86a86-8ff2-4756-a52e-ab6843b50eee
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_event_time
+    - node.type.event
+  module:
+    - text
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+    region: content
+  field_event_time:
+    type: timestamp
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      date_format: short
+      custom_date_format: ''
+      timezone: America/Sao_Paulo
+    third_party_settings: {  }
+hidden:
+  links: true
